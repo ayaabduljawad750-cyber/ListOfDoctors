@@ -1,0 +1,41 @@
+<main class="main">
+  <div class="content">
+
+    <div class="header">
+      <h1>{{ title() }}</h1>
+      <p>Doctors List Dashboard 🏥</p>
+    </div>
+
+    <div class="doctor-container">
+      <div class="doctor-card" *ngFor="let doc of doctors">
+
+        <div class="avatar">
+          {{ doc.gender === 'Male' ? '👨‍⚕️' : '👩‍⚕️' }}
+        </div>
+
+        <div class="info">
+          <h3>{{ doc.name }}</h3>
+
+          <div class="row">
+            <span>Specialization:</span>
+            <b>{{ doc.specialization }}</b>
+          </div>
+
+          <div class="row">
+            <span>Age:</span>
+            <b>{{ doc.age }}</b>
+          </div>
+
+          <div class="row">
+            <span>Gender:</span>
+            <b>{{ doc.gender }}</b>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<router-outlet />
